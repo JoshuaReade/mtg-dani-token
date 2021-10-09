@@ -1,0 +1,60 @@
+<html>
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <header>
+        <title>MTG Token</title>
+        <!--<script src="scripts/main.js"></script>-->
+
+        <!-- 
+            font-family: 'Alike', serif;            Descriptions
+            font-family: 'Bellafair', 'serif';
+            font-family: 'ZCOOL XiaoWei', serif;    Title/Names
+        -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alike&family=Bellefair&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <link rel="stylesheet" type="text/css" href="styles/token-day-night.css">
+        <script>
+            var dayToken, nightToken;
+
+            window.onload = function() {
+                dayToken = document.getElementsByClassName("token-day-wrapper")[0];
+                nightToken = document.getElementsByClassName("token-night-wrapper")[0];
+                
+                dayToken.style.display = "block";
+                nightToken.style.display = "none";
+            }
+
+            function SwapDayNight() {
+
+                console.log(dayToken.style);
+
+                if(dayToken.style.display === "none") {
+                    dayToken.style.display = "block";
+                    nightToken.style.display = "none";
+                } else {
+                    dayToken.style.display = "none";
+                    nightToken.style.display = "block";
+                }
+            }
+        </script>
+    </header>
+    <body>
+        <div class="day-night-wrapper notouch">
+            <div id="tokenSwap" onclick=SwapDayNight()></div>
+            <div class="token-day-wrapper notouch">
+                <div class="token-name notouch daySpecialShadow">Day</div>
+                <!--<div class="token-image notouch"></div>-->
+                <div class="token-description notouch">As it becomes day, transform all nightbound permanents.<br><br>Permanents enter the battlefield daybound.<br><br>If a player casts no spells during their own turn, it becomes night next turn.</div>
+            </div>
+            <div class="token-night-wrapper notouch">
+                <div class="token-name notouch nightSpecialShadow">Night</div>
+                <!--<div class="token-image notouch"></div>-->
+                <div class="token-description notouch">As it becomes night, transform all daybound permanents.<br><br>Permanents enter the battlefield nightbound.<br><br>If a player casts at least two spells during their own turn, it becomes day next turn.</div>
+            </div>
+        </div>
+    </body>
+
+</html>

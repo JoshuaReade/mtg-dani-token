@@ -1,0 +1,207 @@
+
+
+
+#tokenSwap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.day-night-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+}
+
+.token-day-wrapper {
+    /*display: flex;
+    flex-direction: column;*/
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/day-token.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.token-night-wrapper {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/night-token.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.token-name {
+    width: 100%;
+    font-size: 5em;
+    text-align: center;
+    padding-top: 1em;
+    font-family: 'ZCOOL XiaoWei', serif;
+}
+
+.token-image {
+    width: 100%;
+    flex-grow: 1;
+}
+
+@media screen and (max-device-width: 1920px) {
+
+    .token-description {
+        position: absolute;
+        white-space: normal;
+        font-size: 2em;
+        text-align: center;
+        bottom: 2em;
+        left: 0px;
+        right: 0px;
+        padding: 1em;
+        margin: auto;
+        font-family: 'Alike', serif;
+    }
+
+}
+
+
+@media screen and (max-device-width: 500px) {
+
+    .token-description {
+        position: absolute;
+        white-space: normal;
+        font-size: 1.5em;
+        text-align: center;
+        left: 0px;
+        right: 0px;
+        bottom: 2em;
+        padding: 1em;
+        margin: auto;
+        font-family: 'Alike', serif; 
+    }
+
+}
+
+.token-day-wrapper > .token-description {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.token-night-wrapper > .token-description {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+.daySimpleShadow {
+    text-shadow:
+        0 0 5px rgba(200, 175, 100, 0.5),
+        0 0 10px rgba(175, 125, 75, 1),
+        0 0 15px rgba(150, 100, 50, 1);
+}
+
+.daySpecialShadow {
+    text-shadow:
+        0 0 5px rgba(255, 255, 255, 1),
+        0 0 5px rgba(255, 255, 155, 1),
+        0 0 10px rgba(200, 175, 100, 1),
+        0 0 15px rgba(175, 125, 75, 1),
+        0 0 20px rgba(150, 100, 50, 1);
+    
+    animation: day-text-shadow-pulse 2.5s infinite;
+    animation-timing-function: ease-out;
+}
+
+@keyframes day-text-shadow-pulse {
+    0% {
+        text-shadow:
+        0 0.2em 5px rgba(255, 255, 255, 0),
+        0 0 5px rgba(255, 255, 155, 1),
+        0 0 10px rgba(200, 175, 100, 1),
+        0 0 15px rgba(175, 125, 75, 1),
+        0 0 20px rgba(150, 100, 50, 1);
+    }
+    20% {
+        text-shadow:
+        0 0 8px rgba(255, 255, 255, 1),
+        0 0 5px rgba(255, 255, 155, 0.8),
+        0 0 10px rgba(200, 175, 100, 0.6),
+        0 0 15px rgba(175, 125, 75, 0.4),
+        0 0 20px rgba(150, 100, 50, 0.4);
+    }
+    80% {
+        text-shadow:
+        0 -0.3em 16px rgba(255, 255, 255, 0),
+        0 0 5px rgba(255, 255, 155, 1),
+        0 0 10px rgba(200, 175, 100, 1),
+        0 0 15px rgba(175, 125, 75, 1),
+        0 0 20px rgba(150, 100, 50, 1);
+    }
+    100% {
+        text-shadow:
+        0 -0.3em 16px rgba(255, 255, 255, 0),
+        0 0 5px rgba(255, 255, 155, 1),
+        0 0 10px rgba(200, 175, 100, 1),
+        0 0 15px rgba(175, 125, 75, 1),
+        0 0 20px rgba(150, 100, 50, 1);
+    }
+}
+
+
+.nightSimpleShadow {
+    text-shadow:
+        0 0 3px rgba(255, 155, 255, 1),
+        0 0 6px rgba(125, 50, 75, 1),
+        0 0.1em 9px rgba(175, 75, 125, 1); 
+}
+
+.nightSpecialShadow {
+    text-shadow:
+        0 0 12px rgba(255, 0, 0, 0),
+        0 0 3px rgba(255, 155, 255, 1),
+        0 0 6px rgba(125, 50, 75, 1),
+        0 0.1em 9px rgba(175, 75, 125, 1); 
+
+    animation: night-text-shadow-pulse 2.5s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes night-text-shadow-pulse {
+    0% {
+        text-shadow:
+        0 0 12px rgba(255, 0, 0, 0),
+        0 0 3px rgba(255, 155, 255, 1),
+        0 0 6px rgba(125, 50, 75, 1),
+        0 0.1em 9px rgba(175, 75, 125, 1); 
+    }
+    10% {
+        text-shadow:
+        0 0.15em 24px rgba(255, 0, 0, 1),
+        0 0 3px rgba(255, 155, 255, 1),
+        0 0 6px rgba(155, 50, 75, 1),
+        0 0.1em 9px rgba(200, 75, 125, 1); 
+    }
+    100% {
+        text-shadow:
+        0 0 12px rgba(255, 0, 0, 0),
+        0 0 3px rgba(255, 155, 255, 1),
+        0 0 6px rgba(125, 50, 75, 1),
+        0 0.1em 9px rgba(175, 75, 125, 1); 
+    }
+}
+
+
+.token-day-wrapper .token-name {
+    color: white;
+}
+
+.token-day-wrapper .token-description {
+    color: white;
+}
+
+.token-night-wrapper .token-name {
+    color: black;
+}
+
+.token-night-wrapper .token-description {
+    color: black;
+}
