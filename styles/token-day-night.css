@@ -1,11 +1,8 @@
-
-
-
 #tokenSwap {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 9999;
+    z-index: 100;
 }
 
 .day-night-wrapper {
@@ -15,8 +12,6 @@
 }
 
 .token-day-wrapper {
-    /*display: flex;
-    flex-direction: column;*/
     display: block;
     width: 100%;
     height: 100%;

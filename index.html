@@ -17,7 +17,7 @@
         <link rel="stylesheet" type="text/css" href="styles/main.css">
         <link rel="stylesheet" type="text/css" href="styles/token-day-night.css">
         <script>
-            var dayToken, nightToken;
+            var dayToken, nightToken, daniWrapper;
 
             window.onload = function() {
                 dayToken = document.getElementsByClassName("token-day-wrapper")[0];
@@ -28,9 +28,6 @@
             }
 
             function SwapDayNight() {
-
-                console.log(dayToken.style);
-
                 if(dayToken.style.display === "none") {
                     dayToken.style.display = "block";
                     nightToken.style.display = "none";
@@ -39,10 +36,29 @@
                     nightToken.style.display = "block";
                 }
             }
+
+            function ToggleFullscreen(elem) {
+                if(document.fullscreenElement) {
+                    document.exitFullscreen();
+                    elem.style.backgroundImage="url('../images/fullscreen.png')";
+                }
+                else 
+                {
+                    document.documentElement.requestFullscreen({ navigationUI: "hide" });
+                    elem.style.backgroundImage="url('../images/fullscreen_exit.png')";
+                }
+            }
         </script>
     </header>
     <body>
         <div class="day-night-wrapper notouch">
+            <div id="fullscreenToggle" onclick=ToggleFullscreen(this)></div>
+            <div class="left-footer">
+                Art: Johan Grenier
+            </div>
+            <div class="right-footer">
+                ™ & © 2021 Wizard of the Coast
+            </div>
             <div id="tokenSwap" onclick=SwapDayNight()></div>
             <div class="token-day-wrapper notouch">
                 <div class="token-name notouch daySpecialShadow">Day</div>
